@@ -24,9 +24,9 @@ import xlsxwriter
 
 
 names = os.environ.get(AUTH_NAMES)
-AUTH_NAMES=['Cihan Bozkuş','Burak Kartal']
-usernames = ['performics','toyota']
-passwords = ['performics.2022','toyota.2022']
+usernames=os.environ.get(AUTH_USERNAMES)
+password=os.environ.get(AUTH_PASSWORDS)
+
 hashed_passwords = stauth.hasher(passwords).generate()
 #---------STREAMLIT------------
 authenticator = stauth.authenticate(names,usernames,hashed_passwords,
